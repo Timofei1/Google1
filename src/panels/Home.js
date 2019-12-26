@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
@@ -30,8 +30,9 @@ import Icon24Video from '@vkontakte/icons/dist/24/video';
 import Icon24Mention from '@vkontakte/icons/dist/24/mention';
 
 
-const Home = ({ go, id}) => (
-  
+
+const Home = ({ id, go, fetchedUser }) => (
+
   
 
 <Panel id={id}>
@@ -99,7 +100,10 @@ const Home = ({ go, id}) => (
             </Div>
             <br/>
         <br/>
-
+          {
+            id === 288498260 &&
+            <Button> тест</Button>
+          }
           </Group>
 
 	</Panel>
@@ -111,6 +115,7 @@ const Home = ({ go, id}) => (
 Home.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
+  id: PropTypes.number,
 	fetchedUser: PropTypes.shape({
 		photo_200: PropTypes.string,
 		first_name: PropTypes.string,

@@ -72,6 +72,7 @@ Persik5.propTypes = {
     photo_200: PropTypes.string,
     first_name: PropTypes.string,
     last_name: PropTypes.string,
+    id: PropTypes.string,
     city: PropTypes.shape({
       title: PropTypes.string,
     }),
